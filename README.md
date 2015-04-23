@@ -13,7 +13,7 @@ You can type cand1.json to run my supplied candidate json profile
 ### requirements:
 numpy and scipy
 ### other libraries:
-I used a library for querying the AngelList API (angellist.py); however, I had to add my own function to get the information I wanted.
+I used a library for querying the AngelList API (angellist.py) from https://github.com/Falicon/AngelList; however, I had to add my own function to get the information I wanted.
 ### API credentials 
 They are not hidden for this program. Ideally, I would store them encoded in a database. 
 ### Output
