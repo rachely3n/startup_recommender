@@ -1,12 +1,9 @@
-import sys
 import angellist
 import json
 import operator
 import numpy as np
 import scipy.spatial.distance as sp
 import re
-#TODO: different class different file?
-#TODO: validation!!
 #TODO: comments for each class 
 
 # param fp is a string for json file we wish to open
@@ -58,6 +55,7 @@ class LobJsonMake(object) :
       if comp["name"] not in comp_data:
         comp_data[comp["name"]] = (comp["id"], e["tags"])
     return comp_data
+
   # param al is an AngelList() object
   # param tag_id is the id of the tag name
   # param page is page of response requested
@@ -74,7 +72,9 @@ class LobJsonMake(object) :
       self.countSkills(comp_data)
 
   # compile all the information from 6 pages of api call to json/skills.json
+  # lists all jobs for each company
   # ended up with 73 companies
+  # writes to json/alljobs.json
   def allJobs(self) :
     all_jobs = {}
     for p in self.fps :
@@ -94,6 +94,7 @@ class LobJsonMake(object) :
 
   # compile all the information from 6 pages of api call to json/skills.json
   # company: {skill}
+  # writes to json/jobs_skills_count.json
   def allJobsSkills(self) :
     all_jobs = {}
     for p in self.fps :
@@ -118,7 +119,6 @@ class LobJsonMake(object) :
   # prepares information about each company that matches things in
   # candidate's profile
   # writes information to json/comp_vec_dict.json, will be used by LobVectorize class
-  #TODO: make skills comma-separated values?
   def vectorCompDict(self, cand) :
     comp_jobs = load_json('json/jobs_skills_count.json')
     vec_info = {}
@@ -135,7 +135,6 @@ class LobJsonMake(object) :
 class LobVectorize(object) :
 
   def __init__(self, cand) :
-    #TODO: If i want to do comma separated values, I should transform the cand dict first
     self.map = {"mobile": 0, "skills": 1, "db": 2, "location": 3, "language": 4}
     self.cand = cand
     self.comp_vecs = self.vectorize()
@@ -148,14 +147,16 @@ class LobVectorize(object) :
        return v
     return v/norm
 
-  # just add job values 
+  # just add job values for each company vector by using norm
+  # returns a dict, c_id : score
   def simpleRank(self) :
     scores = {}
     for c_id , vec in self.comp_vecs.iteritems() :
       scores[c_id] = np.linalg.norm(vec)
     return scores
 
-  # TODO: comment
+  # adds scores from cosineSimilarity() and simpleRank() for each company
+  # returns a dict, c_id : score
   def calcScores(self):
     cos = self.cosineSimilarity()
     norm = self.simpleRank()
@@ -164,7 +165,7 @@ class LobVectorize(object) :
       scores[k] = norm[k] + cos[k]
     return scores
 
-  # TODO: comment
+  # sorts the dictionary of c_id to scores output by cosineSimilarity()
   def rank(self):
     scores = self.calcScores()
     #TODO: rank and write a function to format company info
@@ -185,7 +186,7 @@ class LobVectorize(object) :
 
   # calculates the cosine similarity for each company between each company's
   # vector and the candidate vector
-  # 
+  # returns a dict of company id to their score
   def cosineSimilarity(self) :
     scores = {}
     for c_id , vec in self.comp_vecs.iteritems() :
@@ -196,7 +197,6 @@ class LobVectorize(object) :
     return scores 
 
   # param cand is dict from candidate's json file
-  # TODO: need a function to take care of the comma-separated values
   # preparation for cosine similarity
   def vectorize(self) :
     cand = self.cand
@@ -210,7 +210,6 @@ class LobVectorize(object) :
             comp_vec[self.map[k]] = count
       comp_vecs[str(c_id)] = comp_vec
     return comp_vecs
-    #tODO: send this info out
 
 class Lob(object) :
   # wrapper class for the bulk of the work
@@ -244,7 +243,6 @@ class Lob(object) :
   #makes sure the data conforms to our requirements
   #while not make requirement, ask for input (getInput)
   # if we meet requirements, we will be able to proceed with a True boolean
-  #TODO: validate soome more? 
   def checkCand(self, data) :
     for e in self.candidate_keys :
       if e not in data :
@@ -268,8 +266,6 @@ class Lob(object) :
     return js.getJobByTag(al, tag_id, page);
     
 if __name__ == '__main__':
-  #TODO: use a db to hide credentials?
-  #i might just hash it
 
   al = angellist.AngelList()
   al.client_id = 'fe4a1fb11ab1a4e0a9595b9c31e7f366af494f1bc0de05e7'
