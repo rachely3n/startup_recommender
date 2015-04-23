@@ -1,0 +1,85 @@
+Startup 1: Flux Factory 
+Product Description:
+Reimagining building design for a more sustainable future.
+
+Learn more at: http://flux.io 
+Company size: 11-50
+
+Startup 2: ZenPayroll 
+Product Description:
+ZenPayroll is Delightful, Modern Payroll. Sign up today at www.zenpayroll.com.
+
+Our mission is to make payroll as simple & intuitive as possible using the principles & tools of modern software. The payroll market today is filled with unnecessary layers of complexity, manual tasks and numerous fees. We built ZenPayroll to fix this.
+
+Please reach out, we'd love to share with you what we're doing and see if there's a way to work together. 
+Company size: 51-200
+
+Startup 3: philosophie 
+Product Description:
+Philosophie helps companies design and build better software by focusing on the users and humanizing the process.
+
+We work primarily on new web and mobile products. Our clients are startups and enterprises who want to bring lean startup mentality to their innovation projects. 
+Company size: 11-50
+
+Startup 4: CodeFights 
+Product Description:
+CodeFights is the first platform that lets developers have fun while solving programming challenges in a real-time PvP setting. The bite-sized nature of our challenges makes it easy to get started and just as easy to get addicted to CodeFighting.
+
+Check it out @ https://codefights.com 
+Company size: 1-10
+
+Startup 5: Groupon 
+Product Description:
+Groupon features a daily deal on the best stuff to do, see, eat, and buy in 45 countries, and soon beyond (read: Space). We have about 10,000 employees working across our Chicago headquarters, a growing office in Seattle and Palo Alto, CA, local markets throughout North America and regional offices in Europe, Latin America, Asia and around the world. 
+Company size: 5000+
+
+Startup 6: FabFitFun 
+Product Description:
+None 
+Company size: 11-50
+
+Startup 7: Plastiq 
+Product Description:
+We have a simple idea – make payments easier for people by letting them use the credit cards they prefer, to pay for things they want, when they want to. 
+Company size: 11-50
+
+Startup 8: Hall 
+Product Description:
+Hall is team communications: Chat, share files, create groups with people in or out of your company
+Available on iPhone, iPad, Android, Mac, Windows, Linux and Web.
+
+* Featured in Apple's App Store & Google Play
+
+Web: https://hall.com
+Integrations: https://hall.com/integrations/
+iOS App: https://itunes.apple.com/us/app/hall/id568759967
+Android App: https://play.google.com/store/apps/details?id=com.hall.android
+Desktop Apps: https://hall.com/download-hall/hall-for-mac 
+Company size: 11-50
+
+Startup 9: Lantern 
+Product Description:
+Lantern makes mental health more accessible and affordable.  We do this by delivering you a personalized program coached by a licensed professional to strengthen your emotional well-being.  Our programs address issues like anxiety, stress, sleep issues, depression and body image.  Starting with our assessment, users answer a short series of questions, from which Lantern is able to understand your areas of strength and opportunities for improvement within your emotional well-being, and then create a custom program tailored your needs.   All users are connected to a licensed professional who offers you support, weekly feedback, and answers any questions you have via in-app text and phone support.  
+
+Lantern's programs are being used by thousands of individuals, have partnerships with 30+ colleges/universities across the country, won the grand prize at SXSW Accelerator in 2014, and are venture backed. 
+Company size: 11-50
+
+Startup 10: AngelList 
+Product Description:
+AngelList is a platform for startups to meet investors, talent and incubators. 
+
+- Meet investors http://angel.co/people/investors and raise money online http://angel.co/invest
+
+- Meet candidates http://angel.co/jobs
+
+- Apply to incubators http://angel.co/incubators/apply
+
+- We also have an API http://angel.co/api.
+
+Accredited investors can invest in syndicates alongside some of the best angel investors in the world. In 2014, we've invested more than $100m in over 240 startups.
+
+- Meet lead investors: angel.co/syndicates 
+
+- Find great startups to back: angel.co/invest 
+Company size: 11-50
+
