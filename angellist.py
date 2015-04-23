@@ -182,15 +182,18 @@ class AngelList(object):
       return self.do_post_request(url, data)
    ##########################################################
     # job-related portions of API, written by Rachel :D!
-    def getJobByTag(self, access_token = None, tag_id = None) :
+    def getJobByTag(self, access_token = None, tag_id = None, page = None) :
       self.check_access_token(access_token)
       if tag_id is None:
         raise AngelListError("the tag_id param is required for this api call.")
 
       # https://api.angel.co/1/tags/1692/jobs
       url = "%s/1/tags/%s/jobs?access_token=%s" % (self.API_ENDPOINT, tag_id, self.access_token)
+
+      if page is not None :
+        url = "%s/1/tags/%s/jobs?page=%s&access_token=%s" % (self.API_ENDPOINT, tag_id, page, self.access_token) 
       return self.do_get_request(url)
-      
+
     # (GET)    https://api.angel.co/1/users/:id/followers
     def getFollowers(self, access_token = None, user_id = None):
       self.check_access_token(access_token)
