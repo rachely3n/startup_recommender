@@ -1,3 +1,4 @@
+import sys
 import angellist
 import json
 import operator
@@ -198,18 +199,25 @@ class LobVectorize(object) :
 
   # param cand is dict from candidate's json file
   # preparation for cosine similarity
+  # if no matches at all, prints no matches
   def vectorize(self) :
     cand = self.cand
     comp_jobs = load_json('json/comp_vec_dict.json')
     comp_vecs = {}
+    blank = True
     for c_id, info in comp_jobs.iteritems() :
       comp_vec = [0 for i in range(0, len(self.map))]
       for sk, count in info.iteritems() :
         for k, v in cand.iteritems() :
           if re.findall(v.lower(), str(sk)) :
+            blank = False
             comp_vec[self.map[k]] = count
       comp_vecs[str(c_id)] = comp_vec
-    return comp_vecs
+    if blank :
+      print "no matches found"
+      sys.exit()
+    else :
+      return comp_vecs
 
 class Lob(object) :
   # wrapper class for the bulk of the work
