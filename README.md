@@ -50,13 +50,3 @@ We then add the value from the datum if it's a match. This value is the number o
 Furthermore, we match based on a regex. If the skill the user provided can be found anywhere in the datum string, it could be a match, such as ruby and ruby on rails. We would probably want these two skills to match. What is ruby without rails?  
 #### Measurement and Score
 Given the limited candidate profile, many of the cosine similarities were the same, so I would include the norm of the vector as well for a very simple way to generate a similarity score. The more jobs that the company offers that matches skills in the candidate, the likelier the user might want to apply. 
-## Future Development
-Given more time, I would want to develop the classification and ranking system to better weight and represent what people look for when applying for software engineering jobs.
-
-Also, I could include different roles such as , UI, frontend, backend, product management, etc. I would have to weigh this component in a certain way. 
-
-Furthermore, I ideally want to somehow factor in what kind of product the user is interested in, because I believe people should work for a company with a product that excites them. 
-
-I would also like to allow the users to put more skills. In the skills field of the json, I'd like to allow the user to perhaps include a comma separated string of all the skills they're interested in. 
-
-There could also be a feature that shows the user how I recommended the companies to them (based on what input they gave). There could be a small data visualization that displays how I generated the startups to them based on their skillset.
